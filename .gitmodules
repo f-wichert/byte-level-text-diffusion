@@ -1,0 +1,6 @@
+[submodule "latent_evaluation/trigrams"]
+	path = latent_evaluation/trigrams
+	url = https://github.com/Aleph-Alpha/trigrams.git
+[submodule "latent_evaluation/blt"]
+	path = latent_evaluation/blt
+	url = https://github.com/facebookresearch/blt

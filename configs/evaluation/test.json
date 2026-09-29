@@ -1,0 +1,105 @@
+base_config = {
+    "encoder_type": encoder_type_arg,
+    "device": "cuda:0",
+    "data_directory": "data",
+    "output_directory": "output",
+
+    "default_subsample": 5000,
+    "default_decomposition": None,
+    "tasks": [
+        # Visualizations
+        {
+            "name": "pca",
+        },
+        {
+            "name": "pca",
+            "decomp": "rbf",
+        },
+        {
+            "name": "t-sne",
+        },
+        {
+            "name": "t-sne",
+            "decomp": "rbf",
+        },
+        # {
+        #     "name": "umap",
+        # },
+
+        # # Analyses
+        # {
+        #     "name": "morphological_neighbour",
+        # },
+        # # {
+        # #     "name": "morphological_neighbour",
+        # #     "decomp": "rbf"
+        # # },
+        # {
+        #     "name": "morphological_neighbour_by_pos",
+        # },
+        # # {
+        # #     "name": "morphological_neighbour_by_pos",
+        # #     "decomp": "rbf",
+        # # },
+        # {
+        #     "name": "synonym_basic",
+        #     "subsample": 20000,
+        # },
+        # # {
+        # #     "name": "synonym_basic",
+        # #     "subsample": 20000,
+        # #     "decomp": "rbf",
+        # # },
+        # {
+        #     "name": "synonym_to_neighbour",
+        #     "n_neighbors": 50,
+        # },
+        # # {
+        # #     "name": "synonym_to_neighbour",
+        # #     "n_neighbors": 50,
+        # #     "decomp": "rbf",
+        # # },
+        # {
+        #     "name": "isotropy",
+        # },
+        # # {
+        # #     "name": "isotropy",
+        # #     "decomp": "rbf",
+        # # },
+        # {
+        #     "name": "linear_probe_word_length",
+        #     "word_lengths": [3, 4, 5, 6, 7, 8],
+        #     "n_words_per_length": 250,
+        # },
+        # {
+        #     "name": "typo_robustness",
+        # },
+        # # {
+        # #     "name": "typo_robustness",
+        # #     "decomp": "rbf",
+        # # },
+        # {
+        #     "name": "analogy",
+        #     "subsample": "all",
+        #     "compute_nn": False,
+        # },
+        # # {
+        # #     "name": "analogy",
+        # #     "subsample": "all",
+        # #     "compute_nn": False,
+        # #     "decomp": "rbf"
+        # # },
+        # {
+        #     "name": "linear_probe_word_length"  
+        # },
+        # {
+        #     "name": "synonym_cluster",
+        #     "subsample": 10000,
+        # },
+        # # {
+        # #     "name": "synonym_cluster",
+        # #     "subsample": 10000,
+        # #     "decomp": "rbf",
+        # # },
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "tasks": [
+        {
+            "name": "covariance",
+            "subsample": 20000,
+            "compute_nn": false
+        },
+        {
+            "name": "covariance",
+            "dataset": "context"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+model:
+  pretrained_model_id: Aleph-Alpha/tfree-hat-pretrained-7b-base
+  sequence_length: 2048
+  decoder_layers: 8
+  decoder_hidden_size: 1024
+  decoder_self_attention_heads: 8
+  decoder_cross_attention_heads: 8
+  head_size: 128
+  latent_compression_dim: 256
+  latent_compression_layers: 4
+  latent_compression_hidden_dims: [2048, 1024, 512]
+
+data:
+  streaming: true
+  sequence_length: 2048
+  slices:
+    fineweb_edu:
+      dataset: HuggingFaceFW/fineweb-edu
+      name: sample-10BT
+      proportion: 0.63
+    wikipedia_en:
+      dataset: wikimedia/wikipedia
+      name: 20231101.en
+      proportion: 0.07
+
+training:
+  seed: 1337
+
+  train_skip_examples_per_slice: 0
+
+  # ===============================
+  freeze_encoder: true
+  freeze_encoder_compression: false
+  master_weights: true 
+  isotropy_loss_enabled: true
+  isotropy_loss_lambda: 10.0  
+  isotropy_loss_max_latents: 0  
+  isotropy_loss_skip_positions: 8 
+  isotropy_loss_pooled_target: true 
+  isotropy_loss_pooled_beta: 0.1
+  uniform_loss_enabled: false  
+  anchor_loss_enabled: false
+  # ===============================
+
+  batch_size: 2
+  gradient_accumulation_steps: 16
+  max_steps: 20000
+  lr: 3.0e-4    
+  betas: [0.9, 0.95]
+  weight_decay: 0.05
+  warmup_steps: 1500
+  min_lr_ratio: 0.1
+  grad_clip_norm: 1.0
+  checkpoint_every_steps: 2500
+  validate_every_steps: 500
+  log_every_steps: 10
+  logger: wandb
+  output_dir: runs/ae-dim256-v3.1-phase1
+  checkpoint_dir: checkpoints/ae-dim256-v3.1-phase1
+  device: cuda:0  
+  dtype: bfloat16
+  drop_unavailable_data: true
+  validation_split: train
+  validation_holdout_examples_per_slice: 512
+  validation_batches_per_slice: 32
+  validation_batch_size: 1
+  latent_shuffle_batch_size: 4
+  wandb_project: tfree-hat-diffusion-autoencoder
+  wandb_entity:
+  wandb_run_name: ae-dim256-v3.1-phase1
+  wandb_mode: online
+  wandb_tags: [ae-dim256, v3.1, phase1, decoder-alignment, ce-plus-isotropy, isotropy-lam10, skip8, pooled-target, compress256, master-weights, from-scratch-arm]

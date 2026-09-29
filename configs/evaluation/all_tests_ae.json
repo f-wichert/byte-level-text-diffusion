@@ -1,0 +1,76 @@
+{
+    "tasks": [
+        {
+            "name": "pca"
+        },
+        {
+            "name": "t-sne"
+        },
+        {
+            "name": "morphological_neighbour"
+        },
+        {
+            "name": "morphological_neighbour_by_pos"
+        },
+        {
+            "name": "synonym_basic",
+            "subsample": 20000
+        },
+        {
+            "name": "synonym_to_neighbour",
+            "n_neighbors": 50
+        },
+        {
+            "name": "isotropy"
+        },
+        {
+            "name": "linear_probe_word_length",
+            "word_lengths": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "n_words_per_length": 250
+        },
+        {
+            "name": "typo_robustness"
+        },
+        {
+            "name": "analogy",
+            "subsample": "all",
+            "compute_nn": false
+        },
+        {
+            "name": "linear_probe_word_length"
+        },
+        {
+            "name": "synonym_cluster",
+            "subsample": 10000
+        },
+        {
+            "name": "covariance",
+            "subsample": 20000,
+            "compute_nn": false
+        },
+        {
+            "name": "covariance",
+            "subsample": 20000,
+            "dataset": "context"
+        },
+        {
+            "name": "explained_variance",
+            "subsample": 20000,
+            "compute_nn": false,
+            "target_dims": [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
+        },
+        {
+            "name": "explained_variance",
+            "subsample": 20000,
+            "dataset": "context",
+            "target_dims": [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
+        }
+    ]
+}

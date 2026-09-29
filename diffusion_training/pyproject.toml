@@ -1,0 +1,26 @@
+[project]
+name = "diff-enc-dec"
+version = "0.1.0"
+description = "TFree-HAT diffusion autoencoder research code"
+authors = [
+    {name = "Frederick",email = "f.wichert.d@posteo.net"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "torch==2.5.1",
+    "transformers==4.57.6",
+    "diffusers>=0.27,<0.31",
+    "datasets",
+    "safetensors",
+    "hat-splitter>=0.1.9",
+    "flash-attn",
+    "pyyaml",
+    "tensorboard",
+    "wandb",
+    "numpy",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
